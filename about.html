@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About — Nio Vlaeyen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.4/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/CSS/bootswatch.css">
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <!-- Fast transition placeholder: if we navigated here while covered, insert a simple fullscreen overlay immediately to avoid a white flash. The full animated overlay is created by script.js on DOMContentLoaded. -->
+    <!-- <script>
+        (function(){
+            try {
+                if (sessionStorage.getItem('tetris') === 'covered') {
+                    var fastOverlay = document.createElement('div');
+                    fastOverlay.id = 'tetris-fast-overlay';
+                    fastOverlay.style.position = 'fixed';
+                    fastOverlay.style.inset = '0';
+                    // use body bg color if available, or black fallback
+                    fastOverlay.style.background = window.getComputedStyle(document.body).backgroundColor || '#000';
+                    fastOverlay.style.zIndex = 100000;
+                    document.documentElement.appendChild(fastOverlay);
+                }
+            } catch(e){}
+        })();
+    </script> -->
+</head>
+<body>
+    <!-- Top navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="nav nav-pills ms-auto" id="mainNavList" role="tablist">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about.html" data-page="about">About Me</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-page="projects">Projects</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-page="skills">Skills</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-page="contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Moving grid header (below navbar) with name -->
+    <header class="moving-grid-header" role="banner">
+        <div class="moving-grid-inner">
+            <h2 class="moving-grid-name">Nio Vlaeyen</h2>
+        </div>
+    </header>
+
+    <div class="container mt-4">
+        <h1 class="mb-3 text-primary">Nio Vlaeyen</h1>
+        <!-- Examples: show common primary components -->
+        <section class="mt-4">
+            <h2 class="h5 mb-3">UI Examples</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <h3 class="h6">Buttons & Badges</h3>
+                    <p>
+                        <button class="btn btn-primary me-2">Primary</button>
+                        <button class="btn btn-outline-primary me-2">Outline</button>
+                        <button class="btn btn-secondary me-2">Secondary</button>
+                    </p>
+                    <p>Badges: <span class="badge bg-primary">Primary</span> <span class="badge bg-secondary">Secondary</span></p>
+
+                    <h3 class="h6 mt-3">Alert</h3>
+                    <div class="alert alert-primary" role="alert">This is a primary alert—should match your chosen color.</div>
+                </div>
+
+                <div class="col-md-6">
+                    <h3 class="h6">Form & Progress</h3>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" value="" id="checkPrimary" checked>
+                        <label class="form-check-label" for="checkPrimary">Checked form control (accent color)</label>
+                    </div>
+                    <div class="mb-3">
+                        <div class="progress" style="height: 20px;">
+                            <div class="progress-bar" id="progressBar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                        </div>
+                    </div>
+                    <h3 class="h6">Link</h3>
+                    <p><a href="#" class="link-primary">Primary link</a></p>
+                </div>
+            </div>
+
+            <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                    <h3 class="h6">Table</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Item one</td>
+                                <td><span class="badge bg-primary">Active</span></td>
+                            </tr>
+                            <tr class="table-primary">
+                                <th scope="row">2</th>
+                                <td>Item two</td>
+                                <td>Primary row</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-md-6">
+                    <h3 class="h6">List Group</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">Normal</li>
+                        <li class="list-group-item list-group-item-primary">Primary item</li>
+                        <li class="list-group-item">Another</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
