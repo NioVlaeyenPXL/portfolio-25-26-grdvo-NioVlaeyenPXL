@@ -1,0 +1,30 @@
+:root {
+    --bs-primary: #30FB01;
+    --bs-primary-rgb: 48, 251, 1;
+}
+
+body{
+    font-family: JetBrains Mono, monospace;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+    background-color: #fff;
+    color: #000;
+}
+
+/* Retro game font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+:root {
+    --retro-font: 'Press Start 2P', JetBrains Mono, monospace;
+}
+
+/* Apply retro font to titles and branding */
+.moving-grid-name, .navbar-brand, h1, h2, .player-tag {
+    font-family: var(--retro-font);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}

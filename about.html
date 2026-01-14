@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,6 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.4/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/CSS/bootswatch.css">
+    <link rel="stylesheet" href="assets/CSS/base.css">
+    <link rel="stylesheet" href="assets/CSS/layout.css">
+    <link rel="stylesheet" href="assets/CSS/effects.css">
     <link rel="stylesheet" href="assets/CSS/style.css">
     <!-- Fast transition placeholder: if we navigated here while covered, insert a simple fullscreen overlay immediately to avoid a white flash. The full animated overlay is created by script.js on DOMContentLoaded. -->
     <!-- <script>
@@ -26,20 +30,38 @@
         })();
     </script> -->
 </head>
+
 <body>
+    <div id="page-loader" class="page-loader" role="status" aria-label="Loading content">
+        <div class="retro-loader" aria-hidden="true">
+            <div class="bars">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="loader-text">Loading...</div>
+        </div>
+    </div>
     <!-- Top navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="nav nav-pills ms-auto" id="mainNavList" role="tablist">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="about.html" data-page="about">About Me</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-page="projects">Projects</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-page="skills">Skills</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-page="contact">Contact</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about.html"
+                            data-page="about">About Me</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#"
+                            data-page="projects">Projects</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-page="skills">Skills</a>
+                    </li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#"
+                            data-page="contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -65,10 +87,12 @@
                         <button class="btn btn-outline-primary me-2">Outline</button>
                         <button class="btn btn-secondary me-2">Secondary</button>
                     </p>
-                    <p>Badges: <span class="badge bg-primary">Primary</span> <span class="badge bg-secondary">Secondary</span></p>
+                    <p>Badges: <span class="badge bg-primary">Primary</span> <span
+                            class="badge bg-secondary">Secondary</span></p>
 
                     <h3 class="h6 mt-3">Alert</h3>
-                    <div class="alert alert-primary" role="alert">This is a primary alert—should match your chosen color.</div>
+                    <div class="alert alert-primary" role="alert">This is a primary alert—should match your chosen
+                        color.</div>
                 </div>
 
                 <div class="col-md-6">
@@ -79,7 +103,8 @@
                     </div>
                     <div class="mb-3">
                         <div class="progress" style="height: 20px;">
-                            <div class="progress-bar" id="progressBar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                            <div class="progress-bar" id="progressBar" role="progressbar" style="width: 50%;"
+                                aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
                         </div>
                     </div>
                     <h3 class="h6">Link</h3>
@@ -127,4 +152,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,57 +1,24 @@
-:root {
-    --bs-primary: #30FB01;
-    --bs-primary-rgb: 48, 251, 1;
-}
-
-body{
-    font-family: JetBrains Mono, monospace;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-/* Retro game font */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-:root {
-    --retro-font: 'Press Start 2P', JetBrains Mono, monospace;
-}
-
-/* Apply retro font to titles and branding */
-.moving-grid-name, .navbar-brand, h1, h2 {
-    font-family: var(--retro-font);
-    letter-spacing: .06em;
-    text-transform: uppercase;
-}
-
 /* Moving grid header styles */
 :root {
-    --grid-size: 64px; /* size of each square */
+    --grid-size: 64px;
     --grid-line-width: 1px;
-    --grid-line-color: #000; /* black grid lines */
-    --grid-height: 160px; /* larger header */
+    --grid-line-color: #000;
+    --grid-height: 160px;
 }
 
-/* page background and base text color (light theme) */
-html, body{
-    background-color: #fff;
-    color: #000;
-}
-
-.moving-grid-header{
-    width:100%;
+.moving-grid-header {
+    width: 100%;
     height: var(--grid-height);
-    overflow:hidden;
-    position:relative;
+    overflow: hidden;
+    position: relative;
     background: transparent;
 }
-.moving-grid-header::before{
+
+.moving-grid-header::before {
     content: "";
-    position:absolute;
-    inset:0;
-    z-index:0;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
     /* vertical and horizontal lines creating squares */
     background-image:
         repeating-linear-gradient(90deg, var(--grid-line-color) 0 var(--grid-line-width), transparent var(--grid-line-width) var(--grid-size)),
@@ -67,89 +34,47 @@ html, body{
 
 }
 
-.moving-grid-inner{
-    position:relative;
-    z-index:1; /* sit above the grid lines */
-    height:100%;
-    display:flex;
-    align-items:center;
-    padding-left:2rem;
-}
 
-.moving-grid-name{
-    margin:0;
-    font-size: clamp(20px, 3.6vw, 44px);
-    line-height:1;
-    color:#000;
-    font-weight:700;
-    text-shadow: none;
-}
 
-/* Page loader styles */
-.page-loader{
-    position:fixed;
-    inset:0;
-    background:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index:9999;
-    transition: opacity .9s ease, visibility .9s ease;
-}
-.page-loader.loaded{ opacity:0; visibility:hidden; pointer-events:none; }
- .retro-loader{
-     text-align:center;
-     color: #000;
-    font-family: var(--retro-font);
-}
-.retro-loader .bars{ display:flex; gap:8px; margin-bottom:12px; }
-.retro-loader .bar{
-    display:block;
-    width:12px;
-    height:12px;
-    background: var(--bs-primary);
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.25) inset;
-    transform-origin: center bottom;
-    animation: bar-pop 1200ms cubic-bezier(.2,.9,.2,1) infinite;
-}
-.retro-loader .bar:nth-child(2){ animation-delay:120ms; }
-.retro-loader .bar:nth-child(3){ animation-delay:240ms; }
-.retro-loader .bar:nth-child(4){ animation-delay:360ms; }
-.retro-loader .bar:nth-child(5){ animation-delay:480ms; }
-.retro-loader .loader-text{ font-size:12px; opacity:.85; }
 
-@keyframes bar-pop{
-    0%{ transform: scaleY(.25); opacity:.4 }
-    50%{ transform: scaleY(1.25); opacity:1 }
-    100%{ transform: scaleY(.25); opacity:.4 }
-}
-
-@media (prefers-reduced-motion: reduce){
-    .retro-loader .bar{ animation:none; opacity:1; transform: scaleY(1); }
-}
-
-@keyframes grid-slide{
-    from { background-position: var(--grid-size) 0, var(--grid-size) 0; }
-    to   { background-position: 0 0, 0 0; }
-}
-
-/* Respect user's reduced-motion preference */
-@media (prefers-reduced-motion: reduce) {
-    .moving-grid-header::before{ animation: none; }
-}
 
 /* Light theme adjustments for readability on white background */
 /* Make common content readable */
-main, .container, h1, h2, h3, h4, h5, h6, p, label, .form-check-label, .card, .card-body {
+main,
+.container,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+.form-check-label,
+.card,
+.card-body {
     color: #000;
 }
 
 /* Navbar and nav links */
-.navbar, .nav-link { color: inherit !important; }
-.nav-pills .nav-link.active { color: #000 !important; }
+.navbar,
+.nav-link {
+    color: inherit !important;
+}
+
+.nav-pills .nav-link.active {
+    color: #000 !important;
+}
 
 /* Ensure headings are black even if `.text-primary` is applied */
-h1, h2, h3, h4, h5, h6 { color: #000 !important; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #000 !important;
+}
 
 
 .game-scene {
@@ -159,61 +84,18 @@ h1, h2, h3, h4, h5, h6 { color: #000 !important; }
     overflow: hidden;
     perspective: 900px;
     background: #fff;
+    background-image: linear-gradient(to top, white, white, #30FB01);
 }
 
-
-.grid-floor {
+.player-tag {
     position: absolute;
-    width: 200%;
-    height: 200%;
-    left: -50%;
-    top: 40%;
-
-    background-image:
-    repeating-linear-gradient(
-        90deg,
-        #000 0 1px,
-        transparent 1px 64px
-    ),
-    repeating-linear-gradient(
-        0deg,
-        #000 0 2px,
-        transparent 2px 64px
-    );
-
-
-    transform-origin: top center;
-    transform:
-        rotateX(65deg)
-        translateY(0);
-
-    animation: grid-scroll 6s linear infinite;
-    will-change: transform;
-
-    mask-image: linear-gradient(
-        to bottom,
-        transparent 0%,
-        black 20%,
-        black 100%
-    );
-
-    /* filter: contrast(0.9); */
-    
+    top: 5%;
+    left: 5%;
+    /* border: 2px solid #000; */
+    /* background-color: white; */
+    color: #000;
+    padding: 10px;
 }
-
-@keyframes grid-scroll {
-    from {
-        transform:
-            rotateX(65deg)
-            translateY(0);
-    }
-    to {
-        transform:
-            rotateX(65deg)
-            translateY(64px);
-    }
-}
-
 
 .game-menu {
     position: relative;
@@ -246,15 +128,13 @@ h1, h2, h3, h4, h5, h6 { color: #000 !important; }
     color: #000;
     text-decoration: none;
     transition: transform 0.2s ease, background 0.2s ease;
+    background-color: white;
 }
 
 .game-menu a:hover {
     background: var(--bs-primary);
     transform: scale(1.1);
 }
-
-
-
 
 
 
@@ -323,5 +203,3 @@ h1, h2, h3, h4, h5, h6 { color: #000 !important; }
     :root{ --transition-duration: 0ms; }
     .transition-overlay .piece{ transition: none; transform: none; opacity:1; }
 }
-
-

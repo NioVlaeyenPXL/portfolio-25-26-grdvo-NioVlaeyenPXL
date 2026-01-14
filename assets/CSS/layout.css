@@ -1,0 +1,73 @@
+.moving-grid-inner{
+    position:relative;
+    z-index:1; /* sit above the grid lines */
+    height:100%;
+    display:flex;
+    align-items:center;
+    padding-left:2rem;
+}
+
+.moving-grid-name{
+    margin:0;
+    font-size: clamp(20px, 3.6vw, 44px);
+    line-height:1;
+    color:#000;
+    font-weight:700;
+    text-shadow: none;
+}
+
+.menu-podium {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 0.5rem;
+
+    justify-items: center;
+    align-items: start;
+
+    padding: 0;
+    list-style: none;
+}
+
+/* Base button style */
+.menu-item a {
+    display: block;
+    padding: 1rem 2.5rem;
+    border: 3px solid #000;
+    background: #fff;
+    color: #000;
+    font-family: var(--retro-font);
+    text-decoration: none;
+    box-shadow: 0 4px 0 #000;
+    transition: transform 0.2s ease;
+}
+
+/* Primary */
+.menu-item.primary {
+    grid-column: 3;
+    grid-row: 1;
+}
+.menu-item.primary a {
+    font-size: 1.4rem;
+    transform: scale(1.15);
+}
+
+/* Secondary */
+.menu-item.secondary.left {
+    grid-column: 2;
+    grid-row: 2;
+}
+.menu-item.secondary.right {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+/* Tertiary */
+.menu-item.tertiary.far-left {
+    grid-column: 1;
+    grid-row: 3;
+}
+.menu-item.tertiary.far-right {
+    grid-column: 5;
+    grid-row: 3;
+}

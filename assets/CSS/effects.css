@@ -1,0 +1,105 @@
+.grid-floor-1 {
+    position: absolute;
+    width: 200%;
+    height: 1000%;
+    left: -50%;
+    top: 30%;
+
+    background-image:
+    repeating-linear-gradient(
+        90deg,
+        #30FB01 0 2px,
+        transparent 1px 64px
+    ),
+    repeating-linear-gradient(
+        0deg,
+        #30FB01 0 2px,
+        transparent 2px 64px
+    );
+
+
+    transform-origin: top center;
+    transform:
+        rotateX(65deg)
+        translateY(0);
+
+    animation: grid-scroll 6s linear infinite;
+    will-change: transform;
+
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 20%,
+        black 100%
+    );
+    
+}
+
+@keyframes grid-scroll {
+    from {
+        transform:
+            rotateX(65deg)
+            translateY(0);
+    }
+    to {
+        transform:
+            rotateX(65deg)
+            translateY(64px);
+    }
+}
+
+
+
+
+/* Page loader styles */
+.page-loader{
+    position:fixed;
+    inset:0;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    transition: opacity .9s ease, visibility .9s ease;
+}
+.page-loader.loaded{ opacity:0; visibility:hidden; pointer-events:none; }
+ .retro-loader{
+     text-align:center;
+     color: #000;
+    font-family: var(--retro-font);
+}
+.retro-loader .bars{ display:flex; gap:8px; margin-bottom:12px; }
+.retro-loader .bar{
+    display:block;
+    width:12px;
+    height:12px;
+    background: var(--bs-primary);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.25) inset;
+    transform-origin: center bottom;
+    animation: bar-pop 1200ms cubic-bezier(.2,.9,.2,1) infinite;
+}
+.retro-loader .bar:nth-child(2){ animation-delay:120ms; }
+.retro-loader .bar:nth-child(3){ animation-delay:240ms; }
+.retro-loader .bar:nth-child(4){ animation-delay:360ms; }
+.retro-loader .bar:nth-child(5){ animation-delay:480ms; }
+.retro-loader .loader-text{ font-size:12px; opacity:.85; }
+
+@keyframes bar-pop{
+    0%{ transform: scaleY(.25); opacity:.4 }
+    50%{ transform: scaleY(1.25); opacity:1 }
+    100%{ transform: scaleY(.25); opacity:.4 }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .retro-loader .bar{ animation:none; opacity:1; transform: scaleY(1); }
+}
+
+@keyframes grid-slide{
+    from { background-position: var(--grid-size) 0, var(--grid-size) 0; }
+    to   { background-position: 0 0, 0 0; }
+}
+
+/* Respect user's reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .moving-grid-header::before{ animation: none; }
+}
