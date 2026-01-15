@@ -1,3 +1,18 @@
+.home-button{
+    position: sticky;
+    top: 5%;
+    left: 5%;
+    margin: 20px;
+    background-color: #30FB01;
+
+}
+
+
+
+
+
+/* ABOUT */
+
 .moving-grid-inner{
     position:relative;
     z-index:1; /* sit above the grid lines */
@@ -15,6 +30,14 @@
     font-weight:700;
     text-shadow: none;
 }
+
+.selfie{
+    max-width: 400px;
+}
+
+
+
+/* INDEX */
 
 .menu-podium {
     display: grid;
@@ -70,4 +93,40 @@
 .menu-item.tertiary.far-right {
     grid-column: 5;
     grid-row: 3;
+}
+
+
+/* PROJECTS */
+
+.project-card{
+    min-height: 200px;
+}
+
+.page-title{
+    align-content: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.projects-intro {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    font-size: 1.4rem;
+    opacity: 0.85;
+    align-content: center;
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }

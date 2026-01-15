@@ -1,43 +1,3 @@
-/* Moving grid header styles */
-:root {
-    --grid-size: 64px;
-    --grid-line-width: 1px;
-    --grid-line-color: #000;
-    --grid-height: 160px;
-}
-
-.moving-grid-header {
-    width: 100%;
-    height: var(--grid-height);
-    overflow: hidden;
-    position: relative;
-    background: transparent;
-}
-
-.moving-grid-header::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    /* vertical and horizontal lines creating squares */
-    background-image:
-        repeating-linear-gradient(90deg, var(--grid-line-color) 0 var(--grid-line-width), transparent var(--grid-line-width) var(--grid-size)),
-        repeating-linear-gradient(0deg, var(--grid-line-color) 0 var(--grid-line-width), transparent var(--grid-line-width) var(--grid-size));
-    /* make each tile exactly one `--grid-size` square to avoid fractional artifacts */
-    background-size: var(--grid-size) var(--grid-size), var(--grid-size) var(--grid-size);
-    /* start offset so the initial paint doesn't show a stray line */
-    background-position: var(--grid-size) 0, var(--grid-size) 0;
-    opacity: 1;
-    pointer-events: none;
-    /* animate the grid sliding sideways (from offset -> 0 avoids initial flash) */
-    animation: grid-slide 10s linear infinite;
-
-}
-
-
-
-
-
 /* Light theme adjustments for readability on white background */
 /* Make common content readable */
 main,
@@ -138,68 +98,88 @@ h6 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-:root{
-    --transition-block-size: 48px;
-    --transition-row-delay: 0.06s;
-    --transition-duration: 900ms;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
-.transition-overlay{
-    position:fixed;
-    inset:0;
-    z-index:10000;
-    display:grid;
-    pointer-events:auto;
-    background:transparent;
-}
-.transition-overlay .piece{
 
-    transform: translateY(-120vh);
-    opacity:1;
-    border-radius:4px;
-    box-shadow: inset 0 -6px rgba(0,0,0,0.12), 0 2px 0 rgba(0,0,0,0.08);
-    transition: transform var(--transition-duration) cubic-bezier(.2,.9,.2,1), opacity calc(var(--transition-duration) * 0.8) linear, box-shadow calc(var(--transition-duration) * 0.5) ease;	border-radius: 0;}
-.transition-overlay .piece.cover{
-    transform: translateY(0) rotate(0);
-    opacity:1;
-}
-.transition-overlay .piece.fall{
-    transform: translateY(120vh) rotate(15deg);
-    opacity:0;
-}
-.transition-overlay .piece{
-    background: var(--bs-primary);
+.skill-card {
+    background: #fff;
     border: 2px solid #000;
-    box-shadow: inset 0 -6px rgba(0,0,0,0.12), 0 2px 0 rgba(0,0,0,0.08);
+    padding: 1rem;
+    text-align: center;
+    font-family: var(--retro-font);
+    font-size: 0.85rem;
+    box-shadow: 4px 4px 0 #000;
+    transition: transform 0.2s ease;
 }
-.piece-single{ background: var(--bs-primary); border: 2px solid #000; }
 
-@media (prefers-reduced-motion: reduce){
-    :root{ --transition-duration: 0ms; }
-    .transition-overlay .piece{ transition: none; transform: none; opacity:1; }
+.skill-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+    align-items: center;
+    border: solid 5px #000;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 320px;
+    display: block;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .about-section {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+
+.moving-grid-header {
+    background-image: linear-gradient(to top, white, white, #30FB01);
+    margin-bottom: 2rem;
+}
+
+.moving-grid-footer {
+    background-image: linear-gradient(to bottom, white, white, #30FB01);
+    margin-top: 2rem
+}
+
+.navbar {
+    border: none;
+    min-height: 70px;
+    max-height: 70px;
+    margin: 0;
+}
+
+.footer{
+    background-color: #30FB01;
+    min-height: 70px;
+    max-height: 70px;
+    align-content: center;
+    text-align: center;
 }

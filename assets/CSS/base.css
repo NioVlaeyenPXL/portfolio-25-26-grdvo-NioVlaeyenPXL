@@ -3,11 +3,12 @@
     --bs-primary-rgb: 48, 251, 1;
 }
 
-body{
+body {
     font-family: JetBrains Mono, monospace;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -16,15 +17,61 @@ html, body {
     color: #000;
 }
 
+
 /* Retro game font */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 :root {
     --retro-font: 'Press Start 2P', JetBrains Mono, monospace;
 }
 
 /* Apply retro font to titles and branding */
-.moving-grid-name, .navbar-brand, h1, h2, .player-tag {
+.moving-grid-name,
+.navbar-brand,
+h1,
+h2,
+.player-tag,
+.home-button {
     font-family: var(--retro-font);
     letter-spacing: .06em;
     text-transform: uppercase;
+}
+
+/* Moving grid header styles */
+:root {
+    --grid-size: 64px;
+    --grid-line-width: 2px;
+    --grid-line-color: #30FB01;
+    --grid-height: 128px;
+}
+
+.moving-grid-header,
+.moving-grid-footer {
+    width: 100%;
+    height: var(--grid-height);
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+    border: solid 2px #30FB01;
+}
+
+.moving-grid-header::before,
+.moving-grid-footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    /* vertical and horizontal lines creating squares */
+    background-image:
+        repeating-linear-gradient(90deg, var(--grid-line-color) 0 var(--grid-line-width), transparent var(--grid-line-width) var(--grid-size)),
+        repeating-linear-gradient(0deg, var(--grid-line-color) 0 var(--grid-line-width), transparent var(--grid-line-width) var(--grid-size));
+    /* make each tile exactly one `--grid-size` square to avoid fractional artifacts */
+    background-size: var(--grid-size) var(--grid-size), var(--grid-size) var(--grid-size);
+    /* start offset so the initial paint doesn't show a stray line */
+    background-position: var(--grid-size) 0, var(--grid-size) 0;
+    opacity: 1;
+    pointer-events: none;
+    /* animate the grid sliding sideways (from offset -> 0 avoids initial flash) */
+    animation: grid-slide 10s linear infinite;
+
 }
