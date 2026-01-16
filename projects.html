@@ -7,15 +7,13 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.4/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="assets/CSS/bootswatch.css">
-    <link rel="stylesheet" href="assets/CSS/base.css">
-    <link rel="stylesheet" href="assets/CSS/layout.css">
-    <link rel="stylesheet" href="assets/CSS/effects.css">
     <link rel="stylesheet" href="assets/CSS/style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand retro-border-text" href="index.html">Portfolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
@@ -25,33 +23,18 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
+                        <a class="nav-link" href="#">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="skills.html">Skills</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-sm-2" type="search" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
+
             </div>
         </div>
     </nav>
@@ -62,7 +45,7 @@
     <main class="projects-page container">
         <h1 class="page-title">Projects</h1>
 
-        <section class="projects-intro">
+        <section class="intro">
             <p>
                 A selection of projects I’ve worked on — ranging from school assignments
                 to personal experiments. Each project represents a different skill set
@@ -73,27 +56,71 @@
 
         <section class="projects-grid">
             <article class="project-card">
-                <h2>Onitama Game</h2>
-                <p>Short description of the project.</p>
-                <span class="project-tag">2024</span>
+                <div class="project-image">
+                    <img src="assets/Images/WildFire.png" alt="Project screenshot">
+                </div>
+
+                <div class="project-body">
+                    <h3 class="project-title">AI Wildfire Predictor</h3>
+                    <p class="project-description">
+                        This project uses machine learning to predict wildfire risks based on
+                        environmental data from previously recorded wildfires. The point of the project was to learn
+                        writing our own AI models and intergrate them into a web enveronment.
+                    </p>
+
+                    <ul class="project-tags">
+                        <li>School</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
             </article>
 
             <article class="project-card">
-                <h2>AI Wildfire Predictor</h2>
-                <p>Another project description.</p>
-                <span class="project-tag">2023</span>
-            </article>
+                <div class="project-image">
+                    <img src="assets/Images/Onitama.png" alt="Project screenshot">
+                </div>
 
-            <article class="project-card">
-                <h2>Suicide Commando Website</h2>
-                <p>Something cool you built.</p>
-                <span class="project-tag">School</span>
-            </article>
+                <div class="project-body">
+                    <h3 class="project-title">Onitama Game</h3>
+                    <p class="project-description">
+                        For this project we had to recreate the boardgame Onitama from the ground up. This was our first
+                        big project where we had to use everything we had learned throughout the year with different
+                        coding languages and combine them all into one project.
+                    </p>
 
+                    <ul class="project-tags">
+                        <li>School</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>C#</li>
+                        <li>Docker</li>
+                    </ul>
+                </div>
+            </article>
             <article class="project-card">
-                <h2>TakeAway Restaurant Website</h2>
-                <p>More portfolio content.</p>
-                <span class="project-tag">Personal</span>
+                <div class="project-image">
+                    <img src="assets/Images/TakeAway.png" alt="Project screenshot">
+                </div>
+
+                <div class="project-body">
+                    <h3 class="project-title">TakeAway Restaurant Website</h3>
+                    <p class="project-description">
+                        This takeaway restaurant website was created as a school project to test our JavaScript skills.
+                        The website features a menu, ordering system, contact form and other features all implemented
+                        with base JavaScript.
+                    </p>
+
+                    <ul class="project-tags">
+                        <li>School</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
             </article>
 
             <!-- Locked DLC card -->
@@ -111,7 +138,8 @@
         </div>
     </footer>
     <div class="footer">
-        <p>Hallo | Privacy | CopyWright | </p>
+        <p>&copy; 2026 Nio Vlaeyen | <a href="privacy.txt" target="_blank">Privacy Policy</a> | <a
+                href="mailto:nio.coding@gmail.com" target="_blank">Nio.coding@gmail.com</a></p>
     </div>
 
 </body>
